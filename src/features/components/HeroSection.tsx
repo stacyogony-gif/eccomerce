@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-red-500">
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
