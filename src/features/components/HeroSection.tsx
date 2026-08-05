@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <div className="bg-red-500">
+    <div className="bg-background text-foreground">
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
@@ -16,18 +16,18 @@ export default function HeroSection() {
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
+            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
 
-        <div className="mx-auto max-w-7xl py-24 sm:py-32 lg:py-40">
+        <div className="mx-auto max-w-7xl py-20 sm:py-28 lg:py-32">
           <div className="grid grid-cols-1 items-center gap-x-12 gap-y-16 lg:grid-cols-2">
             {/* Left: copy */}
             <div>
               <div className="mb-8 flex lg:justify-start justify-center">
-                <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                <div className="relative rounded-full px-3 py-1 text-sm/6 text-muted-foreground ring-1 ring-border hover:ring-primary/50 transition-all">
                   New Fall Collection just dropped.{' '}
-                  <Link href="/shop/new" className="font-semibold text-indigo-400">
+                  <Link href="/product" className="font-semibold text-primary">
                     <span aria-hidden="true" className="absolute inset-0" />
                     Shop now <span aria-hidden="true">&rarr;</span>
                   </Link>
@@ -35,24 +35,24 @@ export default function HeroSection() {
               </div>
 
               <div className="text-center lg:text-left">
-                <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+                <h1 className="text-5xl font-semibold tracking-tight text-balance text-foreground sm:text-7xl">
                   Every step. Every second.
                 </h1>
-                <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+                <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
                   Discover footwear and watches made for people who don't settle — premium quality, honest prices, delivered to your door.
                 </p>
                 <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
                   <Link
-                    href="/shop"
-                    className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    href="/product"
+                    className="rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all"
                   >
                     Shop Collection
                   </Link>
-                  <Link href="/about" className="text-sm/6 font-semibold text-white">
+                  <Link href="/company" className="text-sm/6 font-semibold text-foreground hover:text-primary transition-colors">
                     Our Story <span aria-hidden="true">→</span>
                   </Link>
                 </div>
-                <p className="mt-4 text-xs text-gray-500 text-center lg:text-left">
+                <p className="mt-4 text-xs text-muted-foreground text-center lg:text-left">
                   Free shipping on orders over $75 · 30-day returns
                 </p>
               </div>

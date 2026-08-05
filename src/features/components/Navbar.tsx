@@ -40,20 +40,20 @@ export default function Navbar() {
   const currentTheme = resolvedTheme || theme;
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-gray-900/90 dark:bg-slate-900/90 border-b border-gray-800/80 text-white transition-colors duration-200">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-border text-foreground transition-colors duration-200">
       <nav aria-label="Main Navigation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo */}
           <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="group flex items-center gap-2 text-xl font-bold tracking-tight text-white hover:text-indigo-400 transition-colors"
+              className="group flex items-center gap-2 text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white font-extrabold text-lg shadow-sm group-hover:bg-indigo-500 transition-colors">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-extrabold text-lg shadow-sm group-hover:bg-primary/90 transition-colors">
                 M
               </span>
               <span>
-                Maisy<span className="text-indigo-400">Store</span>
+                Maisy<span className="text-primary">Store</span>
               </span>
             </Link>
           </div>
@@ -66,10 +66,10 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
+                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                       isActive
-                        ? "text-indigo-400 bg-gray-800/60 font-semibold"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/40"
+                        ? "text-primary bg-primary/10 font-semibold"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
                     {link.name}
@@ -85,14 +85,14 @@ export default function Navbar() {
             {mounted && (
               <button
                 onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/60 transition-colors"
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
                 aria-label={`Switch to ${currentTheme === "dark" ? "light" : "dark"} mode`}
                 type="button"
               >
-                {currentTheme === "dark" ? (
+                {currentTheme === "light" ? (
                   <SunIcon className="h-5 w-5 text-amber-400" />
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-indigo-300" />
+                  <MoonIcon className="h-5 w-5 text-indigo-500" />
                 )}
               </button>
             )}
@@ -100,12 +100,12 @@ export default function Navbar() {
             {/* Shopping Cart Icon with Counter */}
             <Link
               href="/cart"
-              className="relative p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/60 transition-colors"
+              className="relative p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               aria-label={`Shopping Cart with ${cartCount} items`}
             >
               <ShoppingCartIcon className="h-6 w-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500 text-[11px] font-bold text-white ring-2 ring-gray-900 animate-pulse">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-primary-foreground ring-2 ring-background animate-pulse">
                   {cartCount > 99 ? "99+" : cartCount}
                 </span>
               )}
@@ -114,7 +114,7 @@ export default function Navbar() {
             {/* Log in Button (Desktop) */}
             <Link
               href="/login"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-sm transition-all duration-150 active:scale-95"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-lg shadow-sm transition-all duration-150 active:scale-95"
             >
               Log in &rarr;
             </Link>
@@ -122,7 +122,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
               type="button"
@@ -138,7 +138,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-800/80 py-4 px-2 space-y-2 animate-in slide-in-from-top duration-200">
+          <div className="md:hidden border-t border-border py-4 px-2 space-y-2 animate-in slide-in-from-top duration-200">
             <div className="flex flex-col space-y-1">
               {links.map((link) => {
                 const isActive = pathname === link.href;
@@ -149,8 +149,8 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${
                       isActive
-                        ? "text-indigo-400 bg-gray-800/80 font-semibold"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                        ? "text-primary bg-primary/10 font-semibold"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
                     {link.name}
@@ -159,11 +159,11 @@ export default function Navbar() {
               })}
             </div>
 
-            <div className="pt-3 border-t border-gray-800/60 flex flex-col space-y-2 px-2">
+            <div className="pt-3 border-t border-border flex flex-col space-y-2 px-2">
               <Link
                 href="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center px-4 py-2.5 text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-sm transition-colors"
+                className="w-full text-center px-4 py-2.5 text-base font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-lg shadow-sm transition-colors"
               >
                 Log in
               </Link>

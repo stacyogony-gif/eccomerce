@@ -25,7 +25,7 @@ const features = [
 
 export default function WhyUsSection() {
     return (
-        <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <div className="relative isolate overflow-hidden bg-background text-foreground py-24 sm:py-32">
             <div
                 aria-hidden="true"
                 className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden blur-3xl"
@@ -41,11 +41,11 @@ export default function WhyUsSection() {
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base/7 font-semibold text-indigo-400">Why choose us</h2>
-                    <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+                    <h2 className="text-base/7 font-semibold text-primary">Why choose us</h2>
+                    <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-foreground sm:text-5xl">
                         Everything you need, nothing you don't
                     </p>
-                    <p className="mt-6 text-lg/8 text-gray-400">
+                    <p className="mt-6 text-lg/8 text-muted-foreground">
                         We obsess over the details so you don't have to. Here's why teams trust us to power
                         their most important work.
                     </p>
@@ -55,14 +55,14 @@ export default function WhyUsSection() {
                     <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                         {features.map((feature) => (
                             <div key={feature.name} className="relative pl-9">
-                                <dt className="inline font-semibold text-white">
+                                <dt className="inline font-semibold text-foreground">
                                     <CheckCircleIcon
                                         aria-hidden="true"
-                                        className="absolute top-1 left-0 size-5 text-indigo-400"
+                                        className="absolute top-1 left-0 size-5 text-primary"
                                     />
                                     {feature.name}
                                 </dt>{' '}
-                                <dd className="inline text-gray-400">{feature.description}</dd>
+                                <dd className="inline text-muted-foreground">{feature.description}</dd>
                             </div>
                         ))}
                     </dl>

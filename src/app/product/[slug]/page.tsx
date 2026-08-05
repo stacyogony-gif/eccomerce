@@ -41,73 +41,75 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const discount = getDiscountPercent(product.price, product.originalPrice)
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-12 bg-white">
-      {/* Breadcrumb */}
-      <nav className="mb-8 text-sm text-neutral-500">
-        <Link href="/" className="hover:text-neutral-900">
-          Home
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-neutral-400">{product.category}</span>
-        <span className="mx-2">/</span>
-        <span className="capitalize text-neutral-900">{product.name}</span>
-      </nav>
+    <div className="w-full min-h-screen bg-background text-foreground">
+      <main className="mx-auto max-w-6xl px-6 py-12">
+        {/* Breadcrumb */}
+        <nav className="mb-8 text-sm text-muted-foreground">
+          <Link href="/" className="hover:text-primary transition-colors">
+            Home
+          </Link>
+          <span className="mx-2">/</span>
+          <Link href="/product" className="hover:text-primary transition-colors">
+            Products
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="capitalize text-foreground font-medium">{product.name}</span>
+        </nav>
 
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-        {/* Image */}
-        <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-neutral-100">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-            priority
-          />
-          {discount > 0 && (
-            <span className="absolute left-4 top-4 rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white">
-              -{discount}%
-            </span>
-          )}
-        </div>
-
-        {/* Details */}
-        <div className="flex flex-col justify-center">
-          <span className="mb-2 text-xs font-medium uppercase tracking-wide text-neutral-500">
-            {product.category}
-          </span>
-
-          <h1 className="mb-4 text-3xl font-bold capitalize text-neutral-900">
-            {product.name}
-          </h1>
-
-          <div className="mb-6 flex items-baseline gap-3">
-            <span className="text-2xl font-semibold text-neutral-900">
-              {product.price}
-            </span>
-            {product.originalPrice !== product.price && (
-              <span className="text-lg text-neutral-400 line-through">
-                {product.originalPrice}
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-start">
+          {/* Image */}
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-card border border-border shadow-sm">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+              priority
+            />
+            {discount > 0 && (
+              <span className="absolute left-4 top-4 rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground shadow-sm">
+                -{discount}% OFF
               </span>
             )}
           </div>
 
-          <p className="mb-8 leading-relaxed text-neutral-600">
-            A closer look at the {product.name}. Add real product copy here —
-            materials, fit, sizing, or whatever detail helps someone decide
-            to buy.
-          </p>
+          {/* Details */}
+          <div className="flex flex-col justify-center">
+            <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">
+              {product.category}
+            </span>
 
-          <div className="flex gap-4">
-            <button className="flex-1 rounded-xl bg-neutral-900 px-6 py-3 font-medium text-white transition hover:bg-neutral-700">
-              Add to cart
-            </button>
-            <button className="rounded-xl border border-neutral-300 px-6 py-3 font-medium text-neutral-900 transition hover:bg-neutral-50">
-              ♡ Wishlist
-            </button>
+            <h1 className="mb-4 text-3xl sm:text-4xl font-bold capitalize text-foreground">
+              {product.name}
+            </h1>
+
+            <div className="mb-6 flex items-baseline gap-3">
+              <span className="text-3xl font-bold text-primary">
+                {product.price}
+              </span>
+              {product.originalPrice !== product.price && (
+                <span className="text-lg text-muted-foreground line-through">
+                  {product.originalPrice}
+                </span>
+              )}
+            </div>
+
+            <p className="mb-8 leading-relaxed text-muted-foreground">
+              A closer look at the {product.name}. Crafted with premium materials designed for long-lasting comfort, durability, and modern style.
+            </p>
+
+            <div className="flex gap-4">
+              <button className="flex-1 rounded-xl bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:bg-primary/90 shadow-md cursor-pointer">
+                Add to cart
+              </button>
+              <button className="rounded-xl border border-border bg-card px-6 py-3.5 font-semibold text-foreground transition-all hover:bg-muted cursor-pointer">
+                ♡ Wishlist
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }

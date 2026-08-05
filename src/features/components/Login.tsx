@@ -17,14 +17,14 @@ export default function Login() {
     };
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
-            <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
+        <div className="flex min-h-screen items-center justify-center bg-background text-foreground px-4 py-12">
+            <div className="w-full max-w-md rounded-2xl bg-card border border-border p-8 shadow-md text-card-foreground">
                 {/* Header */}
                 <div className="mb-8 text-center">
-                    <h1 className="text-3xl font-bold text-blue-900">
+                    <h1 className="text-3xl font-bold text-foreground">
                         Welcome Back
                     </h1>
-                    <p className="mt-2 text-blue-500">
+                    <p className="mt-2 text-muted-foreground">
                         Sign in to your account
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export default function Login() {
                     <div>
                         <label
                             htmlFor="email"
-                            className="mb-2 block text-sm font-medium text-blue-700"
+                            className="mb-2 block text-sm font-semibold text-foreground"
                         >
                             Email Address
                         </label>
@@ -47,7 +47,7 @@ export default function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                         />
                     </div>
 
@@ -56,14 +56,14 @@ export default function Login() {
                         <div className="mb-2 flex items-center justify-between">
                             <label
                                 htmlFor="password"
-                                className="text-sm font-medium text-blue-700"
+                                className="text-sm font-semibold text-foreground"
                             >
                                 Password
                             </label>
 
                             <a
                                 href="#"
-                                className="text-sm text-blue-600 hover:underline"
+                                className="text-sm text-primary hover:underline"
                             >
                                 Forgot Password?
                             </a>
@@ -76,16 +76,16 @@ export default function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                         />
                     </div>
 
                     {/* Remember Me */}
                     <div className="flex items-center justify-between">
-                        <label className="flex items-center gap-2 text-sm text-blue-600">
+                        <label className="flex items-center gap-2 text-sm text-muted-foreground">
                             <input
                                 type="checkbox"
-                                className="h-4 w-4 rounded border-gray-300"
+                                className="h-4 w-4 rounded border-border accent-primary"
                             />
                             Remember Me
                         </label>
@@ -94,7 +94,7 @@ export default function Login() {
                     {/* Button */}
                     <button
                         type="submit"
-                        className="w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700"
+                        className="w-full rounded-lg bg-primary py-3 font-semibold text-primary-foreground transition-all hover:bg-primary/90 shadow-md cursor-pointer"
                     >
                         Sign In
                     </button>
@@ -102,13 +102,13 @@ export default function Login() {
 
                 {/* Divider */}
                 <div className="my-6 flex items-center">
-                    <div className="flex-1 border-t border-gray-300"></div>
-                    <span className="mx-4 text-sm text-blue-500">OR</span>
-                    <div className="flex-1 border-t border-gray-300"></div>
+                    <div className="flex-1 border-t border-border"></div>
+                    <span className="mx-4 text-sm text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t border-border"></div>
                 </div>
 
                 {/* Google Button */}
-                <button className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 py-3 transition hover:bg-gray-100">
+                <button className="flex w-full items-center justify-center gap-3 rounded-lg border border-border bg-card py-3 text-foreground transition-all hover:bg-muted cursor-pointer">
                     <img
                         src="https://www.svgrepo.com/show/475656/google-color.svg"
                         alt="Google"
@@ -118,9 +118,9 @@ export default function Login() {
                 </button>
 
                 {/* Footer */}
-                <p className="mt-6 text-center text-sm text-gray-600">
+                <p className="mt-6 text-center text-sm text-muted-foreground">
                     Don't have an account?{" "}
-                    <a href="#" className="font-semibold text-blue-600 hover:underline">
+                    <a href="#" className="font-semibold text-primary hover:underline">
                         Sign Up
                     </a>
                 </p>

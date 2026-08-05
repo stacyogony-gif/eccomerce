@@ -46,25 +46,28 @@ const footerNavigation = {
 
 export default function Footer() {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-gray-900 border-t border-white/10">
+    <footer aria-labelledby="footer-heading" className="bg-card border-t border-border text-foreground mt-auto">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8 lg:py-20">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           {/* Brand section */}
-          <div className="space-y-8">
-            <img
-              alt="Your Company"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-              className="h-8 w-auto"
-            />
-            <p className="text-balance text-sm/6 text-gray-400">
-              Making the world a better place through constructing elegant hierarchies.
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-extrabold text-lg shadow-sm">
+                M
+              </span>
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                Maisy<span className="text-primary">Store</span>
+              </span>
+            </div>
+            <p className="text-balance text-sm/6 text-muted-foreground">
+              Delivering premium lifestyle products, footwear, and watches with exceptional quality and global shipping.
             </p>
             <div className="flex gap-x-6">
               {footerNavigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <a key={item.name} href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
                 </a>
@@ -73,14 +76,14 @@ export default function Footer() {
           </div>
 
           {/* Links section */}
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold text-white tracking-wider">Solutions</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold text-foreground tracking-wider">Solutions</h3>
+                <ul role="list" className="mt-4 space-y-3">
                   {footerNavigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white transition-colors">
+                      <a href={item.href} className="text-sm/6 text-muted-foreground hover:text-foreground transition-colors">
                         {item.name}
                       </a>
                     </li>
@@ -88,11 +91,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold text-white tracking-wider">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold text-foreground tracking-wider">Support</h3>
+                <ul role="list" className="mt-4 space-y-3">
                   {footerNavigation.support.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white transition-colors">
+                      <a href={item.href} className="text-sm/6 text-muted-foreground hover:text-foreground transition-colors">
                         {item.name}
                       </a>
                     </li>
@@ -102,11 +105,11 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold text-white tracking-wider">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold text-foreground tracking-wider">Company</h3>
+                <ul role="list" className="mt-4 space-y-3">
                   {footerNavigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white transition-colors">
+                      <a href={item.href} className="text-sm/6 text-muted-foreground hover:text-foreground transition-colors">
                         {item.name}
                       </a>
                     </li>
@@ -114,11 +117,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold text-white tracking-wider">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold text-foreground tracking-wider">Legal</h3>
+                <ul role="list" className="mt-4 space-y-3">
                   {footerNavigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white transition-colors">
+                      <a href={item.href} className="text-sm/6 text-muted-foreground hover:text-foreground transition-colors">
                         {item.name}
                       </a>
                     </li>
@@ -130,8 +133,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright section */}
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs/5 text-gray-500">&copy; {new Date().getFullYear()} Your Company, Inc. All rights reserved.</p>
+        <div className="mt-12 border-t border-border pt-8">
+          <p className="text-xs/5 text-muted-foreground">&copy; {new Date().getFullYear()} Maisy Store, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
