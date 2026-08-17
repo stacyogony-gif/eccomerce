@@ -11,7 +11,7 @@ const CounterPage = () => {
 
   const decrement = () => {
     setCount(count - 1)
-  }
+  } 
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4">
