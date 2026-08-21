@@ -213,7 +213,7 @@ export default function ContactPage() {
                   <InfoCard
                     icon={Mail}
                     label="Email"
-                    value="hello@digitickets.co.ke"
+                    value="hello@maisystore.co.ke"
                   />
                   <InfoCard
                     icon={Phone}

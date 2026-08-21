@@ -21,6 +21,7 @@ export const products: Product[] = [
         image: '/images/watch.jpeg',
         images: [
         '/images/watch.jpeg',
+        '/images/watch.jpg',
         '/images/watch-2.jpeg',
         ],
         category: 'Electronics',
@@ -34,6 +35,8 @@ export const products: Product[] = [
         image: '/images/shoe.jpeg',
         images: [
         '/images/shoe.jpeg',
+        '/images/shoes.jpg',
+        '/images/sandals.jpg',
         '/images/shoe-2.jpg',
         ],
         category: 'Footwear',
@@ -45,6 +48,9 @@ export const products: Product[] = [
         price: 500.99,
         originalPrice: 999.99,
         image: '/images/dress.jpg',
+        images: [
+        '/images/dress.jpg',
+        ],
         category: 'dresses',
         slug: "Maroon-dress"
     },
@@ -54,6 +60,9 @@ export const products: Product[] = [
         price: 600.99,
         originalPrice: 1099.99,
         image: '/images/bag.jpg',
+        images: [
+        '/images/bag.jpg',
+        ],
         category: 'bag',
         slug: "pink bag"
     },
@@ -63,6 +72,9 @@ export const products: Product[] = [
         price: 1010.99,
         originalPrice: 1099.99,
         image: '/images/Dove beauty.jpg',
+        images: [
+        '/images/Dove beauty.jpg',
+        ],
         category: 'Dove',
         slug: "dove-beauty"
     },
@@ -71,11 +83,13 @@ export const products: Product[] = [
         name: 'Hair Growth products',
         price: 700.99,
         originalPrice: 1050.99,
-        image: '/images/Hair growth products.jpg',
+        image: '/images/Hair Growth Products.jpg',
+        images: [
+        '/images/Hair Growth Products.jpg',
+        ],
         category: 'hair product',
         slug: "hair-products"
     }
-    
 ]
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)

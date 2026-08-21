@@ -35,6 +35,7 @@ export default function Navbar() {
     { name: "Products", href: "/product" },
     { name: "Company", href: "/company" },
     { name: "Why Us", href: "/WhyUs" },
+    { name: "Contact Us",href:"ContactUs"},
   ];
 
   const currentTheme = resolvedTheme || theme;

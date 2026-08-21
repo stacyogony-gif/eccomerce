@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { ProductGallery } from '@/features/components/ProductGallery'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { products, getProductBySlug } from '@/products'
@@ -39,6 +39,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   const discount = getDiscountPercent(product.price, product.originalPrice)
+  const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image]
 
   return (
     <div className="w-full min-h-screen bg-background text-foreground">
@@ -57,18 +58,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </nav>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-start">
-          {/* Image */}
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-card border border-border shadow-sm">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-              priority
-            />
+          {/* Image Gallery */}
+          <div className="relative w-full">
+            <ProductGallery images={galleryImages} name={product.name} />
             {discount > 0 && (
-              <span className="absolute left-4 top-4 rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground shadow-sm">
+              <span className="absolute left-3 top-3 z-30 rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground shadow-md">
                 -{discount}% OFF
               </span>
             )}
